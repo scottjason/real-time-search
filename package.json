@@ -1,0 +1,49 @@
+{
+  "name": "real-time-search",
+  "version": "0.1.0",
+  "author": "Scott Jason",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "jest-enzyme": "^7.0.1",
+    "polished": "^2.3.1",
+    "react": "^16.7.0",
+    "react-device-detect": "^1.6.1",
+    "react-dom": "^16.7.0",
+    "react-scripts": "2.1.2",
+    "react-test-renderer": "^16.7.0",
+    "styled-components": "^4.1.3",
+    "styled-icons": "^5.8.0",
+    "styled-media-query": "^2.1.1",
+    "styled-reset": "^1.6.4",
+    "throttle-debounce": "^2.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!styled-icons)/\"",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.10.0"
+  },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
+  }
+}
