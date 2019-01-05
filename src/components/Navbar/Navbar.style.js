@@ -11,9 +11,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   height: 110px;
+  min-height: 110px;
+  min-width: 85%;
   width: 85%;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
   background-color: ${darken(.2, '#424250')};
-  z-index: 1;
+  z-index: 2;
   border-left: 1px solid ${darken(.2, '#424250')};
   border-right: 1px solid ${darken(.2, '#424250')};
   ${media.lessThan('940px')`
@@ -63,6 +68,7 @@ export const StatWrap = styled.div`
   min-width: 300px;
   height: 40px;
   margin-bottom: 15px;
+  margin-right: 10px;
   font-size: 1.2rem;
   ${media.lessThan('940px')`
     display: none;
