@@ -1,7 +1,7 @@
 
-# Real-Time Search & Render w/ React
+# Real-time Search & Render w/ React
 
-### Real time search & render of a responsive cards grid. Images and user profile data fetched via the unsplash api.
+### Real-time search & render of a responsive cards grid. Images and user profile data fetched via the unsplash api.
 
 [**View Live Demo**](https://react-real-time-search.herokuapp.com/)
 
