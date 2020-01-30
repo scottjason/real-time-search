@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { lighten, darken } from 'polished';
 import { Colors } from '../../constants';
 import media from 'styled-media-query';
-import { isMobile } from 'react-device-detect';
 
 const { malibu } = Colors;
 

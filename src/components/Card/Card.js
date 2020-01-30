@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Hashtag } from '../Hashtag';
 import { Instagram } from  'styled-icons/boxicons-logos';
 import { Download } from 'styled-icons/feather';
@@ -35,7 +35,6 @@ const Card = props => {
     location,
     download,
     portfolio_url,
-    instagram_username,
   } = props;
   return(
     <Container>

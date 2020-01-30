@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 import media from 'styled-media-query';
-import { isMobile } from 'react-device-detect';
-
 
 export const Container = styled.div`
   position: relative;
