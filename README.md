@@ -8,7 +8,6 @@
 ### Built w/
 
 - React, ES6
-- Unit Testing w/ Jest, Enzyme
 - Styled Components
 ---
 
@@ -21,12 +20,7 @@ git clone git@github.com:scottjason/real-time-search.git
 then:
 
 ```
-yarn && yarn start
-```
-
-to test:
-```
-yarn test 
+npm i && npm start
 ```
 
 ---
