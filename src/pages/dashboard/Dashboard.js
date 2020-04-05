@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { CardsContainer } from '../../containers/CardsContainer';
 import { NavbarContainer } from '../../containers/NavbarContainer';
+import { NoResults } from '../../components/NoResults/';
 import { fetchImages } from '../../api';
 import { debounce } from 'throttle-debounce';
 
@@ -18,6 +19,7 @@ class Dashboard extends Component {
       term: '',
       reqTook: '',
       reqFrom: '',
+      isLoaded: false,
       isFeatured: true,
       isSearchByTerm: false,
     };
@@ -43,8 +45,8 @@ class Dashboard extends Component {
       if (cards) {
         cards = JSON.parse(cards);
         const reqEnd = Date.now()
-        const durationInSec = `${((reqEnd - reqStart) / 1000).toFixed(4)}`;
-        const phrase = durationInSec > 1 ? 'seconds' : 'second';
+        const durationInSec = parseFloat(`${((reqEnd - reqStart) / 1000).toFixed(2)}`);
+        const phrase = durationInSec === 1.00 ? ' second' : ' seconds';
         const reqTook = durationInSec + phrase;
         this.setState({ cards, term, reqTook, reqFrom: 'cache', isSearchByTerm: true, isFeatured: false })
       } else {
@@ -87,22 +89,34 @@ class Dashboard extends Component {
     }
     this.props.setItem(term, JSON.stringify(cards));
     const reqEnd = Date.now()
-    const durationInSec = `${((reqEnd - reqStart) / 1000).toFixed(4)}`;
-    const phrase = durationInSec > 1 ? 'seconds' : 'second';
+    const durationInSec = parseFloat(`${((reqEnd - reqStart) / 1000).toFixed(2)}`);
+    const phrase = durationInSec === 1.00 ? ' second' : ' seconds';
     const reqTook = durationInSec + phrase;
-    this.setState({ cards: cards, isSearchByTerm, isFeatured: !isSearchByTerm, term: term, reqTook, reqFrom: 'api' });
+    this.setState({
+      cards,
+      term,
+      reqTook,
+      isSearchByTerm,
+      reqFrom: 'api',
+      isLoaded: true,
+      isFeatured: !isSearchByTerm,
+    });
   }
   render() {
     return (
       <Fragment>
         <NavbarContainer
           {...this.state}
-          onInputChange={this.onInputChange} />
-        <CardsContainer
-          {...this.state}
-          ref={this.gridRef}
-          fetchImages={this.fetchImages}
+          onInputChange={this.onInputChange}
         />
+        {this.state.cards.length > 0 &&
+            <CardsContainer
+              {...this.state}
+              ref={this.gridRef}
+              fetchImages={this.fetchImages}
+            />
+        }
+        {this.state.isLoaded && !this.state.cards.length && <NoResults />}
       </Fragment>
     )
   }

@@ -1,10 +1,18 @@
 import React from 'react';
 import { Input } from '../Input';
-import { Container, Section, SearchWrap, StatWrap, StatWrapMobile, Stat, Highlight, Line } from './Navbar.style';
+import {
+  Container,
+  Section,
+  SearchWrap,
+  StatWrap,
+  StatWrapMobile,
+  Stat,
+  Highlight,
+  Line
+} from './Navbar.style';
 
 const Navbar = props => {
   const { onInputChange, reqTook, reqFrom, term } = props;
-  console.log('Navbar', props)
   return(
     <Container>
       <Section>
