@@ -4,7 +4,7 @@
   "author": "Scott Jason",
   "private": true,
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "dotenv": "^6.2.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
