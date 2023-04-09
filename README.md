@@ -2,7 +2,7 @@
 
 ### Real-time search & render of a responsive cards grid. Images and user profile data fetched via the unsplash api.
 
-[**View Live Demo**](https://real-time-search-production.up.railway.app/)
+[**View Live Demo**](https://react-real-time-search.netlify.app/)
 
 ### Built w/
 
